@@ -1,0 +1,89 @@
+#ads{
+    width: 187% !important;
+    border: none !important;
+    border-radius: 25px !important;
+    margin-bottom: 220px !important;
+    margin-top: 120px !important;
+}
+#applicationStore{
+    background-color: transparent;
+}
+
+#google{
+    background-color: transparent !important;
+    border: none;
+    width: 250px !important;
+    
+}
+#adsframe{
+    display: flex; flex-direction: column; align-items: center;
+    background-color: #FFF3E5;
+    height: auto !important;
+    border-radius: 15px !important;
+
+}
+#adsBold{
+    background-color: transparent;
+}
+#adstext{
+    margin-top: 15px;
+    background-color: transparent;
+    font-family: 'Montserrat', sans-serif;
+   font-size: 36px;
+}
+#apple{
+   
+    background-color: transparent !important;
+     border: none;
+     width: 250px !important;
+     
+}
+
+
+#adstextbold{
+    background-color:transparent
+}
+
+/* RESPONSIVE OPITONS - RESPONSIVE OPTIONS*/
+
+
+/* Tablets */
+@media screen and (max-width: 768px) {
+    #adstext{ 
+        font-size: 20px;
+        text-align: center !important;
+    }
+   
+}
+
+/* PHONE */
+@media screen and (max-width: 600px) {
+    #cardgroup3{
+
+        margin-top: 30px !important;
+        
+    }
+    #cardgroup2{
+        text-align: center !important;
+        margin-top: 30px !important;
+        
+    }
+}
+
+
+/* LAPTOP */
+@media screen and (max-width: 992px) {
+    #adstext{ 
+        text-align: center !important;
+        font-size: 20px; }
+
+        #apple{ 
+            position: relative;
+         }
+         #adsframe{
+            position: relative;
+         }
+
+
+    }
+

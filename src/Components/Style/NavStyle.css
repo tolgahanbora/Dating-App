@@ -1,0 +1,181 @@
+
+#liste{
+  font-family: 'Montserrat', sans-serif;
+  font-size: medium;
+ padding-right: 20px;
+ 
+}
+#modalcontainer{
+  margin-top: 0px !important;
+}
+.item{
+  color: #D23C3C;
+  display: inline;
+  
+}
+select{
+  margin-top: 0px !important;
+}
+.select{
+  margin-top: 24px !important;
+}
+.active{
+  text-decoration: underline;
+}
+#baslik{
+
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+.buttn{
+  width: 110px !important;
+  height: 35px !important;
+  border: none;
+  background-color: #D23C96 !important ;
+  font-family: 'Montserrat', sans-serif;
+
+
+}
+
+.modal {
+  background-color: rgba(0,0,0,.0001) !important;
+  
+}
+.check{
+  color: #D23C3C;
+}
+.form-check-input:checked{
+  background-color: #D23C3C !important;
+}
+#city{
+  width: 300px !important;
+}
+#confidentiality{
+ width: 450px !important;
+}
+
+#buttonreset{
+  border: none;
+}
+
+
+#LoginBTN{
+  width: 100px !important;
+ background-color:  #D23C96 !important;
+ border: none !important;
+}
+#signupBTN{
+  width: 150px !important;
+  background-color:  #D23C96 !important;
+  border: none !important;
+}
+.modal-header {
+  border: 0px !important;
+  border-radius: 25px !important;
+}
+.modal-content {
+  background-color: transparent !important;
+  border: 0px !important;
+  
+}
+
+
+
+.logo{
+  width: 200px;
+}
+#signupbold{
+  color: #fff !important;
+  background-color: #D23C96 !important ;
+}
+#loginbold{
+  color: #fff !important;
+  background-color: #D23C96 !important ;
+}
+
+
+ @media screen and (max-width: 1180px) {
+  .buttn {
+   
+    margin-top: 10px !important;
+  }
+}
+@media screen and (max-width: 768px) { 
+  #liste{
+    margin-left: 20px !important;
+  }
+  #country{
+    width: auto !important; 
+  
+  }
+  #firstname{
+    width: 190px !important;
+  }
+  #lastname{
+    width: 190px !important;
+  }
+  #city{
+    width: 190px !important;
+  }
+  #emailed{
+    width: 190px !important;
+  }
+  #gender{
+    width: 190px !important;
+  }
+  #pass{
+    width: 190px !important;
+  }
+  #confidentiality{
+    width: 195px !important;
+  }
+}
+@media screen and (max-width: 500px) { 
+  #password{
+  width: 300px !important;
+  }
+  #email{
+    width: 300px !important;
+  }
+#signupModal{
+  width: auto!important;
+  height: auto !important;
+}
+#country{
+  width: auto !important; 
+
+}
+
+#gender{
+  width: auto !important;
+}
+#city{
+  width: auto !important;
+}
+#flexCheckpromotional2{
+  width: 500px  !important;
+}
+
+}
+
+@media screen and (max-width: 1024px) {
+  #confidentiality{
+    width: 300px !important;
+  }
+  #firstname{
+    width: 250px !important;
+  }
+  #lastname{
+    width: 250px !important;
+  }
+  #pass{
+    width: 250px !important;
+    }
+    #emailed{
+      width: 250px !important;
+    }
+    #city{
+      width: 250px !important;
+    }
+  }

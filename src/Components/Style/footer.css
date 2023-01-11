@@ -1,0 +1,77 @@
+#copyright{
+    
+    margin-left: 50px;
+    text-align: center;
+    margin-top: 50px;
+    color: #000000;
+    font-family: 'Montserrat', sans-serif;
+}
+#coupling{
+    color: #D23C3C;
+}
+
+.navItems{
+    text-decoration: none;
+    color: #000000;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#meta{
+    margin-left: 81%;
+    height: 25px;
+    width: 25px;
+    
+}
+#twitter{
+    margin-left: 1%;
+    height: 25px;
+    width: 25px;
+}
+#youtube{
+    margin-left: 1%;
+    height: 25px;
+    width: 25px;
+}
+#instagram{
+    margin-left: 1%;
+    height: 25px;
+    width: 25px;
+}
+
+.footerscolor{
+  color: #D23C3C;
+}
+
+@media screen and (max-width: 1024px) { 
+   #emptycolumn{
+    display: none !important;
+   } 
+    #maincolumn{
+        margin-left: 50px !important;
+    }
+    }
+    @media screen and (max-width: 769px) { 
+        #emptycolumn{
+         display: none !important;
+        } 
+         #maincolumn{
+             margin-left: 70px !important;
+         }
+         }
+
+         @media screen and (max-width: 600px) { 
+            #maincolumn{
+             margin-left: 0px !important;
+            }
+            #meta{
+                margin-left: 0px !important;
+                margin-right: 6px !important;
+            }
+            #twitter{
+                margin-right: 6px !important;
+            }
+            #youtube{
+                margin-right: 6px !important;
+            }
+         }
+

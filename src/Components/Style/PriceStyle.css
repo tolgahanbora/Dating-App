@@ -1,0 +1,211 @@
+
+h2{
+
+    margin-bottom: 40px !important;
+    font-size: 2rem;
+}
+#influencerb{
+    background-color: transparent;
+}
+
+
+.premiumplan{
+    background-color: #FFF3E5;
+}
+
+#premiumbtn{
+ margin-left: 70px;
+ width: 150px;
+ 
+ font-family: 'Montserrat', sans-serif;
+
+
+}
+
+
+
+#basicbtn{
+    margin-left: 70px;
+    width: 150px;
+
+    margin-top: 175px;
+    text-align: center;
+    margin-left: 55px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#celebbtn{
+    margin-left: 70px;
+    width: 150px;
+
+    margin-top: 55px;
+    margin-left: 60px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#cardgroup3{
+    border-color: #D4D4D4 ;
+    height: 500px;
+    width: 300px;
+   
+    
+}
+#cardgroup2{
+   border-color: #D4D4D4 ;
+    height: 500px;
+    width: 300px;
+}
+#cardgroup1{
+   
+    border-color: #D4D4D4 ;
+    height: 500px;
+    width: 300px;
+    background-color: #FFF3E5;
+}
+
+.itemlist1{
+    list-style-type: none;
+    margin-top: 15px;
+    background-color: #FFF3E5;
+    margin-right: 50px;
+
+}
+.itemlist2{
+    list-style-type: none;
+    margin-top: 15px;
+   
+}
+.itemlist3{
+    list-style-type: none;
+    margin-top: 15px;
+  
+}
+.liste2{
+    background-color: #FFF3E5;
+    padding: 15px;
+    font-family: 'Montserrat', sans-serif;
+}
+#premiumcapital{
+    text-align: center;
+    margin-top: 50px;
+}
+#basiccapital{
+    text-align: center;
+    margin-top: 40px;
+}
+#celebcapital{
+    text-align: center;
+    margin-top: 40px;
+}
+#price1{
+    text-align: center;
+    margin-top: 20px;
+}
+#price2{
+    text-align: center;
+    margin-top: 20px;
+    
+}
+#price3{
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+#mostpopular{
+    background-color: #D23C96;
+    width: 125px;
+    height: 31px;
+    text-align: center;
+    padding-top: 3px;
+    font-family: 'Montserrat', sans-serif;
+    position: absolute;
+    margin-left: 159px;
+    margin-top: 10px;
+}
+
+#mostpopular2{
+    background-color: #D23C96;
+    color: #FFFF;
+    margin-top: 16px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#premiumplan{
+    background-color: #FFF3E5;
+}
+
+/* RESPONSIVE OPITONS - RESPONSIVE OPTIONS*/
+
+
+/* Tablets */
+@media screen and (max-width: 768px) {
+    #cardgroup3{
+
+        margin-top: 30px !important;
+        
+    }
+    #cardgroup2{
+
+        margin-top: 30px !important;
+        
+    }
+    #cardgroup1{
+     
+        margin-top: 30px !important;
+        
+    }
+   
+}
+
+/* PHONE */
+@media screen and (max-width: 600px) {
+    #cardgroup3{
+
+        margin-top: 30px !important;
+        
+    }
+    #priceplanh2{
+       margin-top: 350px !important;
+    }
+    #cardgroup2{
+
+        margin-top: 30px !important;
+        
+    }
+    #cardgroup1{
+
+        top: auto !important;
+        
+    }
+}
+
+
+/* LAPTOP */
+@media screen and (max-width: 992px) {
+    #cardgroup3{
+
+        margin-top: 30px !important;
+        
+    }
+    #cardgroup2{
+
+        margin-top: 30px !important;
+        
+    }
+    #cardgroup1{
+     
+        margin-top: 30px !important;
+        
+    }
+}
+@media screen and (max-width: 1024px) {
+ 
+    #cardgroup1{
+     
+        margin-top: 30px !important;
+        
+    }
+}
+
+

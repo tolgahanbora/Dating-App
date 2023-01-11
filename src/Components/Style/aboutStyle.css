@@ -1,0 +1,37 @@
+#aboutH1{
+    font-family: 'Montserrat', sans-serif;
+  
+    margin-left: 90px;
+}
+#aboutss{
+    margin: 0 !important;
+   
+}
+#photos3{
+    margin-left: 130px;
+}
+#paragraph{
+    font-family: 'Montserrat', sans-serif;
+
+    margin-left: 90px;
+
+}
+#special{
+    color: #D23C3C;
+}
+
+@media screen and (max-width: 1200px) { 
+    #photos3{
+        margin-left: 60px !important;
+    }
+  
+  }
+  @media screen and (max-width: 500px) { 
+    #photos3{
+       display: none;
+  
+  }
+  #paragraph{
+    width: 300px !important;
+  }
+}

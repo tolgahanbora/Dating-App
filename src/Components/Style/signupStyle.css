@@ -1,0 +1,25 @@
+#kayitBTN{
+    margin-left: 225px;
+    margin-top: 50px;
+}
+
+#denemes{
+  
+    width: 50%;
+ 
+    margin-left: 450px;
+  margin-top: 0px !important
+
+}
+#signupROW{
+    margin: 0;
+    
+}
+#photos2{
+    width: 650px !important;
+    margin-left: 100px !important;
+   
+}
+.form-control{
+    width: 250px;
+}

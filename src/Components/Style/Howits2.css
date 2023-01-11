@@ -1,0 +1,140 @@
+
+
+.container{
+    margin-top: 100px !important;
+    font-family: 'Montserrat', sans-serif;
+}
+#howitsROW{
+    height: 800px!important;
+}
+
+
+.asks{
+    margin-top: 100px !important;
+}
+.howitsText2{
+    margin: 0px !important;
+    
+}
+/* IMAGE - IMAGE - IMAGE */
+.howitsImage2{
+    margin-left: 160px !important;
+    width: 450px !important;
+}
+#videchatPNG{
+    margin-top: 80px !important;
+}
+#dinnerPNG{
+    margin-top: 50px !important;
+}
+#chillPNG{
+    margin-top: 50px !important;
+}
+#click{
+    width: 200px;
+    height: 55px;
+    margin-top: 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+#secondsa{
+margin-left: 120px !important;
+}
+.liste{
+    list-style-type: none;
+    font-family: 'Montserrat', sans-serif;
+    padding: 0px;
+   
+}
+
+.itemlist{
+    margin-top: 29px;
+ 
+}
+
+.card{
+    height: 220px;
+    width: 240px;
+ 
+}
+
+#firstcard{
+    margin-top: 20px;
+    background-color: #FFF3E5;
+    padding-top: 40px;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    
+}
+
+#secondcard{
+    left: 275px;
+    bottom: 160px;
+    background-color: #FAE6E7;
+    padding-top: 40px;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#thirdcard{
+    bottom: 140px;
+    background-color: #FAE6E7 ;
+    padding-top: 40px;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#fourthcard{
+    left: 275px;
+    bottom: 275px;
+    background-color: #F7E5FF;
+    padding-top: 40px;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+   
+}
+
+.firstbody{
+    background-color: #FFF3E5;
+}
+
+.secondbody{
+    background-color: #FAE6E7;
+}
+
+.thirdbody{
+    background-color: #FAE6E7 ;
+}
+
+.fourthbody{
+    background-color: #F7E5FF;
+}
+
+
+.img-thumbnail{
+    width: 30px;
+    margin-left: 100px;
+    margin-bottom: 10px;
+}
+.iconclass2{
+    width: 20px;
+    position: relative;
+    display: inline;
+    margin-left: 0px;
+  
+   
+    
+}
+
+#howitsh3{
+    font-size: 2rem;
+}
+
+
+@media screen and (max-width: 500px) {
+
+#firstrow2{
+    margin-top: 250px !important;
+}
+
+
+ }

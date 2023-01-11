@@ -1,0 +1,55 @@
+#containerSlider{
+margin-top:  36px !important;
+}
+#Slogan{
+  margin-top: 13%;
+  font-size: 3rem;
+  color: #D23C3C  ;
+  font-family: 'Montserrat', sans-serif;
+
+}
+#article{
+    font-size: 20px;
+}
+#firstBTN{
+    margin-right: 15px;
+}
+#photos{
+  margin-top: 30px;
+  width: 80%;
+  margin-left:10%;
+  background-color: transparent !important;
+}
+@media screen and (max-width: 580px) {
+  #photos{
+    width: 800px !important;
+    height: 300px !important; 
+    margin-left: 50px !important;
+  }
+}
+@media screen and (max-width: 430px) {
+ #photos{
+  display: none !important;
+ }
+ #imageCol{
+  display: none !important;
+ }
+ }
+
+ 
+@media screen and (max-width: 500px) {
+
+#playstoreslider{
+  margin-top: 15px !important;
+}
+#Slogan{
+  width: 500px !important;
+}
+#article{
+  width: 350px !important;
+}
+#firstBTN{
+  margin-top: 25px !important;
+}
+
+ }
