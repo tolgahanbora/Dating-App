@@ -1,7 +1,7 @@
 import React from 'react'
 import './Style/SliderStyle.css'
 import couple from './couple.png'
-import vector7 from './Vector7.png'
+
 function Slider() {
   return (
     <div>
@@ -13,7 +13,7 @@ function Slider() {
                 <button type="button" id='firstBTN' class="btn btn-outline-danger rounded-1 ">App Store</button>
                 <button type="button" class="btn btn-outline-danger rounded-1 " id='playstoreslider'>Play Store</button>
             </div>
-            <div className='col' id='imageCol'>
+            <div className='col-6' id='imageCol'>
     
             <img src={couple} class="img-fluid rounded-4 " alt="pics" id='photos' />
             

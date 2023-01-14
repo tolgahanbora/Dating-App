@@ -20,18 +20,19 @@
     color: #D23C3C;
 }
 
-@media screen and (max-width: 1200px) { 
+
+  @media screen and (max-width: 600px) { 
     #photos3{
-        margin-left: 60px !important;
-    }
-  
-  }
-  @media screen and (max-width: 500px) { 
-    #photos3{
-       display: none;
+   width:300px !important;
   
   }
   #paragraph{
     width: 300px !important;
+  }
+}
+@media screen and (max-width: 500px) { 
+    #photos3{
+   width:300px !important;
+  
   }
 }

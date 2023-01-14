@@ -80,8 +80,39 @@ select{
   
 }
 
+/* REGISTER MODAL - REGISTER MODAL - REGISTER MODAL */
+#registerBTN1{
+  background-color: #D23C96 !important ;
+  font-family: 'Montserrat', sans-serif;
+  border: none !important;
+}
+#registerBTN2{
+  background-color: #D23C96 !important ;
+  font-family: 'Montserrat', sans-serif;
+  border: none !important;
+}
 
+#buttonreset2{
+  float: left !important;
+  border: none !important;
+  margin-right: 185px !important;
+}
 
+#registerSumbit{
+  background-color: #D23C96 !important ;
+  font-family: 'Montserrat', sans-serif;
+  border: none !important;
+  width: 100px !important;
+}
+#gender{
+  width: 400px !important;
+}
+#country{
+  width:  400px !important;
+}
+#city{
+  width:  400px !important;
+}
 .logo{
   width: 200px;
 }
@@ -101,7 +132,7 @@ select{
     margin-top: 10px !important;
   }
 }
-@media screen and (max-width: 768px) { 
+@media screen and (max-width: 990px) { 
   #liste{
     margin-left: 20px !important;
   }
@@ -122,7 +153,7 @@ select{
     width: 190px !important;
   }
   #gender{
-    width: 190px !important;
+    width: 250px !important;
   }
   #pass{
     width: 190px !important;

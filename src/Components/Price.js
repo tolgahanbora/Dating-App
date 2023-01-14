@@ -28,7 +28,7 @@ function Price() {
                     <div class="card border border-2 " id='cardgroup3' >
                         <div class="card-body rounded">
                             <h5 class="card-title" id='celebcapital'><b>Premium Plan</b></h5>
-                            <h4 id='price3'><b>$19.00 </b><small>/ Month</small></h4>
+                            <h4 id='price3'><b>$19.90 </b><small>/ Month</small></h4>
                             <ul className='liste'>
                                 <li className='itemlist3'>No ads</li>
                                 <li className='itemlist3'>All gaming activitiy</li>
@@ -47,7 +47,7 @@ function Price() {
                         <span class="border border-2 rounded-2" id='mostpopular'><b id='mostpopular2'>Most Popular</b></span>
                         <div class="card-body rounded-2 " className='premiumplan'>
                             <h5 class="card-title" className='premiumplan' id='premiumcapital'><b id='premiumplan'>Influencer Plan</b></h5>
-                            <h4 className='premiumplan' id='price1'><b class='premiumplan'>$29.99 </b><small class='premiumplan'>/ Month</small></h4>
+                            <h4 className='premiumplan' id='price1'><b class='premiumplan'>$29.90 </b><small class='premiumplan'>/ Month</small></h4>
 
                             <ul className='liste2' >
                             <li className='itemlist1'><b id='influencerb'>Only Influencer</b></li>

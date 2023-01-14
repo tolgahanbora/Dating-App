@@ -17,6 +17,8 @@ function About() {
         </div>
         </div>
 
+
+
         <div class="col">
         <img src={about} class="img-fluid rounded-4 " alt="pics" id='photos3' />
         </div>

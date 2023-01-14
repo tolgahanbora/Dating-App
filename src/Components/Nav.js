@@ -3,7 +3,6 @@ import { NavLink, Routes, Route, useNavigate } from 'react-router-dom'
 import About from './Pages/About'
 import Contact from './Pages/Contact'
 import Howits2 from './Pages/Howits2'
-import Signup from './Pages/Signup'
 import './Style/NavStyle.css'
 import logo from './logo.png'
 import ResetPassword from './Pages/resetPass'
@@ -65,98 +64,122 @@ function Nav() {
             </div>
           </div>
         </div>
-        <div class="modal modal-xl fade" id="signupModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Register</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                <div class="container" id='modalcontainer'>
-                  <div class="row">
-                    <h3><b>Welcome, Could you introduce yourself?</b> </h3>
+        <div class="modal fade" id="signupModal" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+        <div class="modal-dialog ">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalToggleLabel">Register</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
 
-                    <div class="col-md-4" >
-                      <div class="mb-3 my-4">
+            <div class="modal-body">
+              <div class="container" id='modalcontainer'>
+                <div class="row">
+                  <h5>Welcome, Could you introduce yourself?</h5>
+                  <div class="mb-3 my-4">
+                    <label for="emailed" class="form-label">Email address</label>
+                    <input type="email" class="form-control" id='emailed' placeholder='email@example.com' name="emailed" aria-describedby="emailed" required />
+                  </div>
+                  <div class="mb-3">
+                    <label for="pass" class="form-label">Password</label>
+                    <input type="text" class="form-control" id='pass'  placeholder='at least 6 characters' name="pass" aria-describedby="pass"  required/>
+                  </div>
+                  <div class="form-check ms-3 my-3">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckpromotional" />
+                    <label class="form-check-label" for="flexCheckpromotional" id='flexCheckpromotional2'>
+                      I don't want to miss <span className="check">Coupling</span> discount and promotional emails
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+            <button className="nav-link px-2 link-dark mx-2" data-bs-dismiss="modal" id='buttonreset2' data-bs-target="#LoginModal" data-bs-toggle="modal"><span className='item'>Already a account</span></button>
+              <button class="btn btn-primary" id='registerBTN1' data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Continue</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+        <div class="modal-dialog ">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalToggleLabel2">Register</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+            <div class="container" id='modalcontainer'>
+            <div class="row">
+                  <h5>Welcome, Could you introduce yourself?</h5>
+            <div class="mb-3 my-4">
                         <label for="firstname" class="form-label">First Name</label>
-                        <input type="text" class="form-control" id='firstname' name="firstname" aria-describedby="firstname" />
+                        <input type="text" class="form-control" id='firstname' name="firstname" aria-describedby="firstname" required/>
                       </div>
-                    </div>
-                    <div class="col-md-4 ms-5">
-                      <div class="ms-5">
-                        <label for="country" class="form-label select" >Your Country</label>
-                        <select name='country' id='country' class="form-select" aria-label="country">
-                          <option selected>Select your country</option>
-                          <option value="1">Turkey</option>
-                          <option value="2">United States</option>
-                          <option value="3">Japan</option>
-                        </select>
-                      </div>
-                    </div>
-                    <div class="col-md-4" >
                       <div class="mb-3 my-4">
                         <label for="lastname" class="form-label">Last Name</label>
-                        <input type="text" class="form-control" id='lastname' name="lastname" aria-describedby="lastname" />
+                        <input type="text" class="form-control" id='lastname' name="lastname" aria-describedby="lastname" required/>
                       </div>
-                    </div>
-                    <div class="col-md-4 ms-5">
-                      <div class="ms-5 ">
-                        <label for="city" class="form-label select">Your City</label>
-                        <input type="text" class="form-control" id='city' name="city" aria-describedby="city" />
-                      </div>
-                    </div>
-                    <div class="col-md-4" >
-                      <div class="mb-3 my-4">
-                        <label for="emailed" class="form-label">Email address</label>
-                        <input type="email" class="form-control" id='emailed' name="emailed" aria-describedby="emailed" />
-                      </div>
-                    </div>
-                    <div class="col-md-4 ms-5">
-                      <div class="ms-5 ">
+                      <div class="">
                         <label for="gender" class="form-label select">Your Gender</label>
-                        <select name="gender" id="gender" class="form-select" aria-label="gender">
+                        <select name="gender" id="gender" class="form-select" aria-label="gender" required>
                           <option selected >Select your gender</option>
                           <option value="1" >Heterosexual</option>
                           <option value="2">Bisexual</option>
                           <option value="3">Non-binary</option>
                         </select>
                       </div>
-                    </div>
-                    <div class="col-md-4" >
-                      <div class="mb-3">
-                        <label for="pass" class="form-label">Password</label>
-                        <input type="text" class="form-control" id='pass' name="pass" aria-describedby="pass" />
-                      </div>
-                    </div>
-                    <div class="col-md-6 ms-5">
-                      <div class="form-check ms-5 my-3">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckpromotional" />
-                        <label class="form-check-label" for="flexCheckpromotional" id='flexCheckpromotional2'>
-                          I want to be informed about <span className="check">Coupling discount and promotional</span> e-mails
-                        </label>
-                      </div>
-                      <div class="col-md-4 ms-5">
-                        <div class="form-check  ">
-                          <input class="form-check-input" type="checkbox" value="" id="flexCheckconfidentiality" />
-                          <label class="form-check-label" for="flexCheckconfidentiality" id='confidentiality'>I have read and understood the <span className="">confidentiality agreement.</span> </label>
-                        </div>
-                      </div>
-                    </div>
-
-
-                    <div class="modal-footer">
-                      <button class="btn btn-danger" type="submit" id='signupBTN' >Sign Up</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            </div>
+            </div>
+            </div>
+            <div class="modal-footer">
+            <button className="nav-link px-2 link-dark mx-2" data-bs-dismiss="modal" id='buttonreset2' data-bs-target="#LoginModal" data-bs-toggle="modal"><span className='item'>Already a account</span></button>
+            <button class="btn btn-primary" id='registerBTN2' data-bs-target="#exampleModalToggle3" data-bs-toggle="modal">Continue</button>
             </div>
           </div>
-
-
-
         </div>
+        
+      </div>
+      <div class="modal fade" id="exampleModalToggle3" aria-hidden="true" aria-labelledby="exampleModalToggleLabel3" tabindex="-1">
+        <div class="modal-dialog ">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalToggleLabel3">Register</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+            <div class="container" id='modalcontainer'>
+            <div class="row">
+                  <h5>Welcome, Could you introduce yourself?</h5>
+                  <div class="">
+                        <label for="country" class="form-label select" >Your Country</label>
+                        <input name='country' list="datalistOptions" placeholder='Type to search your country' id='country' class="form-select" aria-label="country" required />
+                          <datalist id="datalistOptions">
+                          <option value="Turkey"></option>
+                          <option value="United States"></option>
+                          <option value="Japan"></option>
+                          </datalist>
+                      </div>
+                      <div class="my-3">
+                        <label for="city" class="form-label select">Your City </label>
+                        <input type="text" class="form-control" id='city' placeholder='city' name="city" aria-describedby="city" required />
+                      </div>
+                      <div class="form-check ms-2">
+                          <input class="form-check-input" type="checkbox" value="" id="flexCheckconfidentiality" required/>
+                          <label class="form-check-label" for="flexCheckconfidentiality" id='confidentiality'>I have read and understood the <span className="">confidentiality agreement.</span> </label>
+                        </div>
+            </div>
+            </div>
+            </div>
+            <div class="modal-footer">
+            
+            <button className="nav-link px-2 link-dark mx-2" data-bs-dismiss="modal" id='buttonreset2' data-bs-target="#LoginModal" data-bs-toggle="modal"><span className='item'>Already a account</span></button>
+            <button class="btn btn-primary" type='sumbit' id='registerSumbit' data-bs-target="#exampleModalToggle3" data-bs-toggle="modal">Sign Up</button>
+            </div>
+     
+          </div>
+        </div>
+        
+      </div>
 
 
 
@@ -169,7 +192,6 @@ function Nav() {
         <Route path='/howits' element={<Howits2 />} />
         <Route path='/about' element={<About />} />
         <Route path='/contact' element={<Contact />} />
-        <Route path='/signup' element={<Signup />} />
         <Route path='/login' element={< Home />} />
         <Route path='/privacy' element={< Privacy />} />
         <Route path='/terms' element={< Terms />} />

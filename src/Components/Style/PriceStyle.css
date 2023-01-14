@@ -178,6 +178,10 @@ h2{
         top: auto !important;
         
     }
+    #basicbtn{
+        margin-right: 55px !important;
+    }
+  
 }
 
 
@@ -208,4 +212,23 @@ h2{
     }
 }
 
+@media screen and (max-width: 764px) {
+    #priceplanh2{
+        margin-top: 350px !important;
+     }
+    #cardgroup3{
 
+        margin-top: 30px !important;
+        
+    }
+    #cardgroup2{
+
+        margin-top: 30px !important;
+        
+    }
+    #cardgroup1{
+     
+        margin-top: 30px !important;
+        
+    }
+}
