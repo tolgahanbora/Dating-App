@@ -1,10 +1,10 @@
 import React from 'react'
 import {useNavigate} from 'react-router-dom'
-import './Style/howits.css'
-import Vector from './Vector.png'
-import Vector2 from './Vector2.png'
-import Vector3 from './Vector3.png'
-import Vector4 from './Vector4.png'
+import '../Style/howits.css'
+import {Vector ,
+ Vector2,
+Vector3 ,
+ Vector4 } from '../MediaIcons/index' 
 function Howits() {
 
 

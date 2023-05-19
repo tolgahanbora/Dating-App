@@ -1,6 +1,6 @@
 import React from 'react'
-import './Style/SliderStyle.css'
-import couple from './couple.png'
+import '../Style/SliderStyle.css'
+import couple from '../MediaIcons/couple.png'
 
 function Slider() {
   return (

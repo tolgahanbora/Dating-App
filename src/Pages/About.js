@@ -1,5 +1,5 @@
 import React from 'react'
-import about from '../about.png'
+import about from '../MediaIcons/about.png'
 import '../Style/aboutStyle.css'
 function About() {
   return (

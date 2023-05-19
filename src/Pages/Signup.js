@@ -1,6 +1,6 @@
 import React from 'react'
 import { Formik, Field, Form } from 'formik';
-import signmockup from '../mockup2.png'
+import signmockup from '../MediaIcons/mockup2.png'
 import '../Style/signupStyle.css'
 function Signup() {
   return (
@@ -51,7 +51,7 @@ function Signup() {
                 </div>
                 <div class="row">
                 <div class="col">
-                <label for="inputPassword5" class="form-label">Password</label>
+                <label for="inputPassword5 " class="form-label">Password</label>
                 <Field type='password' name='password'  id="inputPassword5" placeholder="Your Password" class="form-control" aria-describedby="passwordHelpBlock"/><br/>
                 </div>
                 <div class="col">

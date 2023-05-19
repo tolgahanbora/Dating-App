@@ -1,13 +1,13 @@
 import React from 'react'
-import Vector from '../Vector.png'
-import Vector2 from '../Vector2.png'
-import Vector3 from '../Vector3.png'
-import Vector4 from '../Vector4.png'
-import videoChat from '../MediaIcons/videoChat.png'
-import dateFood from '../MediaIcons/datefood.png'
-import gaming from '../MediaIcons/gaming.png'
-import chill from '../MediaIcons/chill.png'
-import message from '../MediaIcons/message2.png'
+import {Vector ,
+ Vector2 ,
+ Vector3 ,
+ Vector4 ,
+ videoChat ,
+ dateFood ,
+ gaming ,
+ chill ,
+ message } from '../MediaIcons/index.js'
 import "../Style/Howits2.css"
 function Howits2() {
   return (

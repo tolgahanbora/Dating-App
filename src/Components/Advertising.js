@@ -1,7 +1,7 @@
 import React from 'react'
-import './Style/ads.css'
-import googlePlay from './googleplay.png'
-import Apple from './apple.png'
+import '../Style/ads.css'
+import googlePlay from '../MediaIcons/googleplay.png'
+import Apple from '../MediaIcons/apple.png'
 function Advertising() {
   return (
     <div className='container'>
