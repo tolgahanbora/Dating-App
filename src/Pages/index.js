@@ -6,7 +6,7 @@ import Howits2 from './Howits2'
 import Profile from './Profile'
 import Privacy from './Privacy'
 import ResetPassword from './resetPass'
-import Signup from './Signup'
+import Chat from './Chat'
 import Terms from './Terms'
 
 
@@ -19,6 +19,6 @@ export{
     Privacy,
     Profile,
     ResetPassword,
-    Signup,
+    Chat,
     Terms
 }

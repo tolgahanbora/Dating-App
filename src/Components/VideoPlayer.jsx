@@ -19,4 +19,4 @@ function VideoPlayer({user}) {
   )
 }
 
-export default VideoPlayer
+export default VideoPlayer 

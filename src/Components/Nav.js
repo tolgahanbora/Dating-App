@@ -7,7 +7,7 @@ import { Modal, Button, Form } from 'react-bootstrap';
 
 import logo from '../MediaIcons/logo.png'
 import "../Style/NavStyle.css"
-import { About, Contact, Howits2, ResetPassword, Home, Privacy, Terms, Cookies, Profile } from '../Pages/index.js'
+import { About, Contact, Howits2, ResetPassword, Home, Privacy, Terms, Cookies, Profile , Chat} from '../Pages/index.js'
 
 
 
@@ -111,7 +111,7 @@ function Nav() {
     }
   }
 
-
+  //Login için Handle Butonu
   const handleSubmitLogin = async (e) => {
     e.preventDefault()
 
@@ -172,9 +172,9 @@ function Nav() {
 
             {/*TOKEN YOKSA NAV ELEMANLARINI GÖSTER VARSA GÖSTERME  */}
             {!token ? <NavLink to='/' className="nav-link px-2 link-dark " activeClassName="active" ><span className='item'><b>Home</b></span></NavLink> : ""}
-            {!token ? <NavLink to='/howits' className="nav-link px-2 link-dark" activeClassName="active" ><span className='item'><b>How It Works</b></span></NavLink> : ""}
+            {!token ? <NavLink to='/howits' className="nav-link px-2 link-dark" activeClassName="active" ><span className='item'><b>How It Works</b></span></NavLink> :  <NavLink to='/chat' className="nav-link px-2 link-dark" activeClassName="active"><span className='item'><b>Chat</b></span></NavLink>}
             {!token ? <NavLink to='/about' className="nav-link px-2 link-dark" activeClassName="active"><span className='item'><b>About</b></span></NavLink> : ""}
-            {!token ? <NavLink to='/contact' className="nav-link px-2 link-dark" activeClassName="active"><span className='item'><b>Contact Us</b></span></NavLink> : ""}
+            {!token ? <NavLink to='/contact' className="nav-link px-2 link-dark" activeClassName="active"><span className='item'><b>Contact Us</b></span></NavLink> : <NavLink to='/profile' className="nav-link px-2 link-dark" activeClassName="active"><span className='item'><b>Profile</b></span></NavLink>}
 
           </ul>
 
@@ -366,6 +366,8 @@ function Nav() {
         {<Route path='/about' element={<About />} />}
         {<Route path='/contact' element={<Contact />} />}
         {token ? <Route path='/profile' element={< Profile setToken={setToken} token={token} />} /> : ""}
+        {token ? <Route path='/chat' element={< Chat setToken={setToken} token={token} />} /> : ""}
+        
         <Route path='/privacy' element={< Privacy />} />
         <Route path='/terms' element={< Terms />} />
         <Route path='/cookies' element={< Cookies />} />
