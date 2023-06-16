@@ -8,7 +8,7 @@ const options = {
 
   channel: 'Coupling', // your agora channel
 
-  token: "007eJxTYHATvKXHHWsla5mraL7xS5zs73Dm7I+1MaemOC+MvGXDbqfAYJiakphsZmJpYWBqYmJiZmaZkmKSbGqckpRkbpqWkmjky9eZ0hDIyHA5t5eZkQECQXwOBuf80oKczLx0BgYAwBUd/Q==", // use null or skip if using app in testing mode
+  token: "007eJxTYIhf09Kz6r6q/TuXU8trn8+bX3yitTysRLpdL37Lpjjm9i4FBsPUlMRkMxNLCwNTExMTMzPLlBSTZFPjlKQkc9O0lESjiQ49KQ2BjAxvLgUzMzJAIIjPweCcX1qQk5mXzsAAAC+oIlI=", // use null or skip if using app in testing mode
 
 };
 
