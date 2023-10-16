@@ -128,7 +128,7 @@ function Nav() {
         console.log(data);
         setToken(data);
         handleClose();
-        navigate("/profile");
+        navigate("/chat");
         alert("Başarıyla giriş yapıldı!");
       }
     } catch (error) {
