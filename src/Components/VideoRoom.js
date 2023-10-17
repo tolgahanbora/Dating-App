@@ -23,14 +23,14 @@ function VideoRoom() {
   const [localTracks, setLocalTracks] = useState([])
 
   const handleUserJoined = async (user, mediaType) => {
-    await client.subscribe(user,mediaType)
+    await client.subscribe(user, mediaType)
 
-    if(mediaType === "video") {
+    if (mediaType === "video") {
       setUsers((previousUsers) => [...previousUsers, user])
     }
 
-    if(mediaType === "audio") {
-      
+    if (mediaType === "audio") {
+
     }
 
   }
@@ -41,7 +41,7 @@ function VideoRoom() {
     setUsers((previousUsers) => previousUsers.filter(user => user.uid !== evt.uid));
   }
 
- 
+
 
   useEffect(() => {
     client.on("user-published", handleUserJoined)
@@ -49,18 +49,18 @@ function VideoRoom() {
     let tracks
 
     client.join(options.appId, options.channel, options.token, null)
-    .then((uid) => Promise.all([AgoraRTC.createMicrophoneAndCameraTracks(), Promise.resolve(uid)]))
-    .then(([tracks, uid]) => {
-      const [audioTrack, videoTrack] = tracks;
-      setLocalTracks(tracks)
-      setUsers((previousUsers) => [...previousUsers, {
-        uid,
-        videoTrack,
-        audioTrack,
-        isLocal: true, // Add this flag
-      }]);
-      client.publish(tracks);
-    });
+      .then((uid) => Promise.all([AgoraRTC.createMicrophoneAndCameraTracks(), Promise.resolve(uid)]))
+      .then(([tracks, uid]) => {
+        const [audioTrack, videoTrack] = tracks;
+        setLocalTracks(tracks)
+        setUsers((previousUsers) => [...previousUsers, {
+          uid,
+          videoTrack,
+          audioTrack,
+          isLocal: true, // Add this flag
+        }]);
+        client.publish(tracks);
+      });
     return () => {
       for (let localTrack of localTracks) {
         localTrack.stop()
@@ -69,16 +69,16 @@ function VideoRoom() {
 
       client.off("user-published", handleUserJoined)
       client.off("user-left", handleUserLeft)
-      client.unpublish(tracks).then(() => client.leave()) 
+      client.unpublish(tracks).then(() => client.leave())
     }
   }, [])
 
 
 
-  return ( 
-    <div style={{display: "grid",gridTemplateColumns: "repeat(2, 410px)" }}>
-      {users.map((user)  => (
-        <VideoPlayer key={user.uid} user={user} isLocal={user.isLocal}/>
+  return (
+    <div style={{ display: "flex", flexDirection: "column" }}>
+      {users.map((user) => (
+        <VideoPlayer key={user.uid} user={user} isLocal={user.isLocal} />
       ))}
     </div>
   )

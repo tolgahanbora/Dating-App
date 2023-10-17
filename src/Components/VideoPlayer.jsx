@@ -1,11 +1,11 @@
-import React, { useEffect, useRef } from 'react'
+// VideoPlayer.js
 
+import React from 'react';
 
-function VideoPlayer({user,isLocal }) {
-  
+const VideoPlayer = ({ user, isLocal }) => {
   const videoStyle = {
-    width: isLocal ? '300px' : '410px', // Adjust sizes as needed
-    height: isLocal ? '200px' : '300px', // Adjust sizes as needed
+    width: isLocal ? '340px' : '1280px',
+    height: isLocal ? '200px' : '720px',
     border: '1px solid #ccc',
   };
 
@@ -23,4 +23,4 @@ function VideoPlayer({user,isLocal }) {
   );
 };
 
-export default VideoPlayer 
+export default VideoPlayer;
