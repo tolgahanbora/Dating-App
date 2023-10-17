@@ -10,7 +10,6 @@ function Chat({ token }) {
         <div>
             {token ? (
                 <div>
-                    <p style={{marginInline:"115px"}}>Account: {token.user.email}</p>
                     {/* <p>Durum: {user.online ? 'Çevrimiçi' : 'Çevrimdışı'}</p> */}
                 </div>
             ) : (
