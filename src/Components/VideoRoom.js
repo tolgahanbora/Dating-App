@@ -56,7 +56,8 @@ function VideoRoom() {
       setUsers((previousUsers) => [...previousUsers, {
         uid,
         videoTrack,
-        audioTrack
+        audioTrack,
+        isLocal: true, // Add this flag
       }]);
       client.publish(tracks);
     });
@@ -77,7 +78,7 @@ function VideoRoom() {
   return ( 
     <div style={{display: "grid",gridTemplateColumns: "repeat(2, 410px)" }}>
       {users.map((user)  => (
-        <VideoPlayer key={user.uid} user={user} />
+        <VideoPlayer key={user.uid} user={user} isLocal={user.isLocal}/>
       ))}
     </div>
   )
