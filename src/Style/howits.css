@@ -1,6 +1,6 @@
 
 
-.container{
+#howItsContainer{
     margin-top: 230px !important;
     font-family: 'Montserrat', sans-serif;
 }
@@ -107,3 +107,50 @@ margin-left: 120px !important;
 }
 
 
+/* Media query for mobile devices */
+/* Existing CSS styles... */
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+    #howItsContainer {
+        margin-top: 230px !important;
+        font-family: 'Montserrat', sans-serif;
+      }
+      
+  
+    #secondsa {
+      margin-left: 0 !important;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .card {
+      width: 80%;
+      margin-bottom: 20px;
+    }
+  
+    #firstcard,
+    #secondcard,
+    #thirdcard,
+    #fourthcard {
+      left: 0 !important;
+      bottom: 0 !important;
+    }
+  
+    #secondcard {
+      left: 0 !important;
+      bottom: 0 !important;
+    }
+  
+    #thirdcard {
+      left: 0 !important;
+      bottom: 0 !important;
+    }
+  
+    #fourthcard {
+      left: 0 !important;
+      bottom: 0 !important;
+    }
+  }
+  

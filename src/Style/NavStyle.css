@@ -80,6 +80,26 @@ select{
   
 }
 
+/* PROFILE MODAL */
+.profile-modal {
+  width: 256px;
+  height: 423px;
+  border-radius: 7px !important;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.filter-modal {
+  width: 300px;
+  height: 400px;
+  border-radius: 7px !important;
+  align-items: center;
+  justify-content: center;
+
+}
+
+
 /* REGISTER MODAL - REGISTER MODAL - REGISTER MODAL */
 #registerBTN1{
   background-color: #D23C96 !important ;
@@ -209,4 +229,30 @@ select{
     #city{
       width: 250px !important;
     }
+
+    
+  }
+
+  @media screen and (max-width: 768px) {
+    /* Adjustments for smaller screens */
+    .profile-modal,
+    .filter-modal {
+      width: 80%; /* Adjust the width as needed */
+      max-width: 90%;
+      height: auto; /* Auto height */
+    }
+  
+    /* Modify other styles as needed */
+  }
+  
+  /* Media query for even smaller screens */
+  @media screen and (max-width: 480px) {
+    /* Further adjustments for smaller screens */
+    .profile-modal,
+    .filter-modal {
+      width: 90%; /* Adjust the width as needed */
+      max-width: 100%;
+    }
+  
+    /* Modify other styles as needed */
   }

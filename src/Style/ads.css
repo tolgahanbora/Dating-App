@@ -47,43 +47,43 @@
 /* RESPONSIVE OPITONS - RESPONSIVE OPTIONS*/
 
 
+
+
 /* Tablets */
 @media screen and (max-width: 768px) {
-    #adstext{ 
-        font-size: 20px;
-        text-align: center !important;
+    #adstext {
+      font-size: 20px;
+      text-align: center !important;
     }
-   
-}
-
-/* PHONE */
-@media screen and (max-width: 600px) {
-    #cardgroup3{
-
-        margin-top: 30px !important;
-        
+  
+    /* Adjust other styles as needed */
+  }
+  
+  /* Phones */
+  @media screen and (max-width: 600px) {
+    #cardgroup3 {
+      margin-top: 30px !important;
     }
-    #cardgroup2{
-        text-align: center !important;
-        margin-top: 30px !important;
-        
+    #cardgroup2 {
+      text-align: center !important;
+      margin-top: 30px !important;
     }
-}
-
-
-/* LAPTOP */
-@media screen and (max-width: 992px) {
-    #adstext{ 
-        text-align: center !important;
-        font-size: 20px; }
-
-        #apple{ 
-            position: relative;
-         }
-         #adsframe{
-            position: relative;
-         }
-
-
+  
+    /* Adjust other styles as needed */
+  }
+  
+  /* Laptops */
+  @media screen and (max-width: 992px) {
+    #adstext {
+      text-align: center !important;
+      font-size: 20px;
     }
-
+    #apple {
+      position: relative;
+    }
+    #adsframe {
+      position: relative;
+    }
+  
+    /* Adjust other styles as needed */
+  }

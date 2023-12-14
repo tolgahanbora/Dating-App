@@ -3,5 +3,14 @@
  
 }
 
+#quizGameBTN{
+  width: 123px !important;
+  height: 40px !important;
+  background-color: #FD838F !important;
+  color: #FAFAFA;
+  border-radius: 8px !important;
 
+  gap: 10px !important;
+  border: none !important;
+}
 

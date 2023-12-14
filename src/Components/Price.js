@@ -3,7 +3,7 @@ import '../Style/PriceStyle.css'
 
 function Price() {
     return (
-        <div class='container-lg d-flex flex-column ' >
+        <div class='container-lg d-flex flex-column ' id='priceCont' >
             <h2 id='priceplanh2' ><b id='priceplan'>Price Plans</b></h2>
             <div class='row  '>
 

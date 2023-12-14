@@ -3,21 +3,25 @@ import { useEffect, useState } from 'react'
 import AgoraRTC from "agora-rtc-sdk-ng"
 import VideoPlayer from './VideoPlayer';
 
-const options = {
-  appId: "1edac649805444669dd4c53dbb75fda2",
 
-  channel: 'Coupling', // your agora channel
 
-  token: "007eJxTYGAKy7hU65KS+H9uxCttWeXViinu7O6PL12MDj4TnKlzsUKBwTA1JTHZzMTSwsDUxMTEzMwyJcUk2dQ4JSnJ3DQtJdGIc7NuakMgI4Pd/AoGRigE8TkYnPNLC3Iy89IZGABFYR8j", // use null or skip if using app in testing mode
 
-};
 
-const client = AgoraRTC.createClient({
-  mode: "rtc",
-  codec: "vp8",
-})
+function VideoRoom({token,peerId}) {
 
-function VideoRoom() {
+  const options = {
+    appId: "1edac649805444669dd4c53dbb75fda2",
+  
+    channel: 'Coupling', // your agora channel
+  
+  
+
+  };
+
+  const client = AgoraRTC.createClient({
+    mode: "rtc",
+    codec: "vp8",
+  })
 
   const [users, setUsers] = useState([])
   const [localTracks, setLocalTracks] = useState([])
@@ -26,7 +30,7 @@ function VideoRoom() {
     await client.subscribe(user, mediaType)
 
     if (mediaType === "video") {
-      setUsers((previousUsers) => [...previousUsers, user])
+      setUsers(peerId)
     }
 
     if (mediaType === "audio") {
@@ -38,7 +42,7 @@ function VideoRoom() {
   const handleUserLeft = (evt) => {
     // Kullanıcı çıkış yaptığında yapılması gereken işlemler burada gerçekleştirilir
     // Örneğin, kullanıcıyı users dizisinden kaldırabilirsiniz
-    setUsers((previousUsers) => previousUsers.filter(user => user.uid !== evt.uid));
+    setUsers((previousUsers) => previousUsers.filter(user => peerId !== evt.uid));
   }
 
 
@@ -76,10 +80,14 @@ function VideoRoom() {
 
 
   return (
-    <div style={{ display: "flex", flexDirection: "column" }}>
+    <div className='container'>
+
+    
+    <div style={{ display: "flex", flexDirection: "column", alignItems:"start", justifyContent:"start" }}>
       {users.map((user) => (
         <VideoPlayer key={user.uid} user={user} isLocal={user.isLocal} />
       ))}
+    </div>
     </div>
   )
 

@@ -2,19 +2,23 @@
 import { useState, useEffect } from 'react';
 import { NavLink, Routes, Route, useNavigate } from 'react-router-dom'
 import { supabase } from '../lib/supabaseClient.js';
-import { Modal, Button, Form } from 'react-bootstrap';
+import { Modal, Button, Form, Badge } from 'react-bootstrap';
 
 
 import logo from '../MediaIcons/logo.png'
 import "../Style/NavStyle.css"
-import { About, Contact, Howits2, ResetPassword, Home, Privacy, Terms, Cookies, Profile , Chat} from '../Pages/index.js'
+import { About, Contact, Howits2, ResetPassword, Home, Privacy, Terms, Cookies, Profile, Chat } from '../Pages/index.js'
 
+import { FaUserCircle } from "react-icons/fa"
+import { HiOutlineMail } from "react-icons/hi"
+import { BiWorld } from "react-icons/bi"
+import { BsGenderAmbiguous } from "react-icons/bs"
 
 
 function Nav() {
 
   const navigate = useNavigate()
-
+  const [showProfileModal, setShowProfileModal] = useState(false);
   const [token, setToken] = useState(false)
 
   //Login Modal kapatıp açmak için UseState
@@ -30,13 +34,23 @@ function Nav() {
 
   //Sign Up datalarını tuttuğum UseState
   const [formData, setFormData] = useState({
-    fullName: "", email: "", password: ""
+    fullName: "", email: "", password: "", gender: "", country: ""
   })
 
   //Login datalarını tuttuğum UseState
   const [loginData, setLoginData] = useState({
     email: "", password: ""
   })
+
+
+
+  const handleProfileClick = () => {
+    setShowProfileModal(true);
+  }
+
+  const handleCloseProfileModal = () => {
+    setShowProfileModal(false);
+  }
 
 
 
@@ -92,47 +106,79 @@ function Nav() {
   //Sign Up için Handle Butonu
   const handleSubmit = async (e) => {
     e.preventDefault()
-
-    try {
-      const { data, error } = await supabase.auth.signUp(
-        {
-          email: formData.email,
-          password: formData.password,
-          options: {
-            data: {
-              first_name: formData.fullName,
+    if (formData.email && formData.fullName && formData.password && formData.gender && formData.country) {
+      try {
+        const { data, error } = await supabase.auth.signUp(
+          {
+            email: formData.email,
+            password: formData.password,
+            options: {
+              data: {
+                first_name: formData.fullName,
+                gender: formData.gender,
+                country: formData.country,
+              }
             }
           }
-        }
-      )
-      alert("Check your email for verification ")
-    } catch (error) {
-      alert(error)
+        )
+        alert("Check your email for verification ")
+      }
+      catch (error) {
+        alert(error)
+      }
+    } else {
+      alert("Please fill out all fields before submitting.")
     }
+  }
+
+  const setOnlineUser = async () => {
+
+
+    const { data, error } = await supabase
+      .from('profiles')
+      .update({ acount: true })
+      .eq('email', loginData.email )
+      .select()
+
+    if(error) {
+      console.log("something went wrong for online", error)
+    }
+
   }
 
   //Login için Handle Butonu
   const handleSubmitLogin = async (e) => {
     e.preventDefault()
 
-    try {
-      const { data, error } = await supabase.auth.signInWithPassword({
-        email: loginData.email,
-        password: loginData.password
-      })
-      if (error) {
-        // Şifre yanlış olduğunda yönlendirme yapmayın.
-        console.log(error);
-        alert("Giriş başarısız!");
-      } else {
-        console.log(data);
-        setToken(data);
-        handleClose();
-        navigate("/chat");
-        alert("Başarıyla giriş yapıldı!");
+    // Form verilerinin dolu olup olmadığını kontrol et
+    if (loginData.email && loginData.password) {
+      try {
+        const { data, error } = await supabase.auth.signInWithPassword({
+          email: loginData.email,
+          password: loginData.password
+        })
+        if (error) {
+          // Şifre yanlış olduğunda yönlendirme yapmayın.
+          console.log(error);
+          alert("Giriş başarısız!");
+        } else {
+          console.log(data);
+          setToken(data);
+          handleClose();
+
+
+          await setOnlineUser()
+          navigate("/chat");
+          alert("Başarıyla giriş yapıldı!");
+
+
+
+        }
+      } catch (error) {
+        alert(error)
       }
-    } catch (error) {
-      alert(error)
+    } else {
+      alert("Please fill out all fields before submitting.")
     }
   }
 
@@ -159,6 +205,21 @@ function Nav() {
     }
   })
 
+  const handleLogout = () => {
+    // Clear the token from sessionStorage
+
+    const signOutFunc = async () => {
+      const { error } = await supabase.auth.signOut()
+    }
+    signOutFunc()
+    sessionStorage.removeItem('token');
+    // Reset the token state
+    setToken(null);
+    // Navigate to the home page
+    navigate('/');
+  }
+
+
   return (
     <div>
       <div class="container-lg">
@@ -172,15 +233,28 @@ function Nav() {
 
             {/*TOKEN YOKSA NAV ELEMANLARINI GÖSTER VARSA GÖSTERME  */}
             {!token ? <NavLink to='/' className="nav-link px-2 link-dark " activeClassName="active" ><span className='item'><b>Home</b></span></NavLink> : ""}
-            {!token ? <NavLink to='/howits' className="nav-link px-2 link-dark" activeClassName="active" ><span className='item'><b>How It Works</b></span></NavLink> :  <NavLink to='/chat' className="nav-link px-2 link-dark" activeClassName="active"><span className='item'><b>Chat</b></span></NavLink>}
+            {!token ? <NavLink to='/howits' className="nav-link px-2 link-dark" activeClassName="active" ><span className='item'><b>How It Works</b></span></NavLink> : ""}
             {!token ? <NavLink to='/about' className="nav-link px-2 link-dark" activeClassName="active"><span className='item'><b>About</b></span></NavLink> : ""}
-            {!token ? <NavLink to='/contact' className="nav-link px-2 link-dark" activeClassName="active"><span className='item'><b>Contact Us</b></span></NavLink> : <NavLink to='/profile' className="nav-link px-2 link-dark" activeClassName="active"><span className='item'><b>Profile</b></span></NavLink>}
+            {!token ? <NavLink to='/contact' className="nav-link px-2 link-dark" activeClassName="active"><span className='item'><b>Contact Us</b></span></NavLink> :
+
+              <div className='row'>
+                <Badge pill bg="#D23C3C" onClick={handleProfileClick} style={{ backgroundColor: "#FED9D5", color: "#D23C3C", cursor: 'pointer', width: '175px', height: '48px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 5 }}>
+
+                  <FaUserCircle size={32} style={{ backgroundColor: "transparent" }} /> {token.user.user_metadata.first_name}
+
+                </Badge>
+                <button variant="button danger" onClick={handleLogout} className="mt-3">
+                  Logout
+                </button>
+              </div>
+
+            }
 
           </ul>
 
           {/*LOGIN VE SIGNUP MODA BUTONU */}
 
-        {!token ?  <div class="col-md-3 ">
+          {!token ? <div class="col-md-3 ">
             <button class="buttn rounded-2  me-2 " id='loginbtns' onClick={handleShow}><b id='signupbold'>Login</b></button>
 
 
@@ -189,6 +263,41 @@ function Nav() {
           </div> : ""}
 
         </header>
+
+
+        {/* Profile Modal */}
+
+        {token ?
+          <Modal
+            show={showProfileModal}
+            onHide={handleCloseProfileModal}
+            dialogClassName="profile-modal"
+          >
+            <Modal.Header closeButton>
+              <Modal.Title>Profile</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+              {/* Add your profile content here */}
+              {/* Example: <Profile /> component */}
+              <h6><FaUserCircle size={32} style={{ backgroundColor: "transparent", color: "#D23C3C" }} /> {token.user.user_metadata.first_name}</h6>
+              <div className='row'>
+                <p style={{ fontSize: "12px", fontWeight: 500, lineHeight: "16px", marginTop: "15px" }}><HiOutlineMail style={{ color: "#D23C3C" }} size={20} />  {token.user.email} </p>
+              </div>
+              <div className='row'>
+                <p style={{ fontSize: "12px", fontWeight: 500, lineHeight: "16px", marginTop: "15px" }}><BsGenderAmbiguous size={20} style={{ color: "#D23C3C" }} />  {token.user.user_metadata.gender}</p>
+              </div>
+              <div className='row'>
+                <p style={{ fontSize: "12px", fontWeight: 500, lineHeight: "16px", marginTop: "15px" }}><BiWorld style={{ color: "#D23C3C" }} size={20} />  {token.user.user_metadata.country}</p>
+              </div>
+              <div className='row'>
+                <p style={{ fontSize: "12px", fontWeight: 500, lineHeight: "16px", marginTop: "15px" }}> Acount Status: </p>
+              </div>
+
+            </Modal.Body>
+          </Modal>
+          : ""
+
+        }
 
 
 
@@ -244,6 +353,27 @@ function Nav() {
                     <Form.Label htmlFor="password">Password</Form.Label>
                     <Form.Control type="password" id="password" placeholder="at least 6 characters" name="password" onChange={handleChange} required />
                   </Form.Group>
+                  <Form.Group className="mb-3 my-4">
+                    <Form.Label htmlFor="gender">Gender</Form.Label>
+                    <Form.Select id="gender" name="gender" onChange={handleChange} required>
+                      <option value="">Select</option>
+                      <option value="woman">Woman</option>
+                      <option value="man">Man</option>
+                      <option value="couple">Couple</option>
+                      <option value="trans">Trans</option>
+                    </Form.Select>
+                  </Form.Group>
+                  <Form.Group className="mb-3 my-4">
+                    <Form.Label htmlFor="country">Country</Form.Label>
+                    <Form.Select id="country" name="country" onChange={handleChange} required>
+                      <option value="">Select</option>
+                      <option value="Afghanistan">Afghanistan</option>
+                      <option value="Albania">Albania</option>
+                      <option value="Algeria">Algeria</option>
+                      {/* Diğer ülkeleri buraya ekleyin */}
+                    </Form.Select>
+                  </Form.Group>
+
                   <Form.Group className="form-check ms-3 my-3">
                     <Form.Check
                       type="checkbox"
@@ -367,14 +497,14 @@ function Nav() {
         {<Route path='/contact' element={<Contact />} />}
         {token ? <Route path='/profile' element={< Profile setToken={setToken} token={token} />} /> : ""}
         {token ? <Route path='/chat' element={< Chat setToken={setToken} token={token} />} /> : ""}
-        
+
         <Route path='/privacy' element={< Privacy />} />
         <Route path='/terms' element={< Terms />} />
         <Route path='/cookies' element={< Cookies />} />
         {<Route path='/ResetPassword' element={< ResetPassword />} />}
       </Routes>
 
-    </div>
+    </div >
 
   )
 }

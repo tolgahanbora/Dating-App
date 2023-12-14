@@ -12,7 +12,7 @@ import "../Style/Howits2.css"
 function Howits2() {
   return (
 
-       <div className='container ' >
+       <div className='container ' id='howits2Container'>
             <div className='row' id='howitsROW'>
                 <div className='col mt-1'>
                     <h3 id="howitsh3"><b>How It Works ?</b></h3>

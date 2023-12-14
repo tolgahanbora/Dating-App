@@ -6,6 +6,9 @@ import Footer from './Footer'
 import Nav from './Nav'
 
 import VideoRoom from './VideoRoom'
+import ChatContainer from './ChatContainer'
+import QuestionGameCard from './QuestionGameCard'
+import AgoraChat from './AgoraChat'
 
 
 export  {
@@ -15,6 +18,9 @@ export  {
     Price,
     Nav,
     Footer,
-    VideoRoom
+    VideoRoom,
+    ChatContainer,
+    QuestionGameCard,
+    AgoraChat
 }
 

@@ -1,0 +1,54 @@
+
+
+#questionDiv{
+
+    background-color: #FED9D5 !important;
+
+}
+
+.questionDiv{
+
+    background-color: #FED9D5 !important;
+
+}
+#questionDiv {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    background-color: #FED9D5;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 8px;
+  }
+  
+  #questionDiv p {
+    font-size: 14px;
+    font-weight: 500;
+    color: #D23C3C;
+    padding: 10px;
+    text-align: center;
+    width: 100%; /* Yatayda tam genişlik */
+  }
+  
+  #reloadIcon {
+    margin-left: 10px;
+  }
+  
+  #quizGameBTN {
+    width: 123px;
+    height: 48px;
+    margin-bottom: 10px;
+  }
+  
+  @media screen and (max-width: 768px) {
+    #questionDiv p {
+      font-size: 12px;
+    }
+  
+    #quizGameBTN {
+      width: 100%; /* Genişlik tam ekran genişliğine göre ayarlanacak */
+    }
+  }
+  
