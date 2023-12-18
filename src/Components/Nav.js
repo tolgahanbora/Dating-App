@@ -137,10 +137,10 @@ function Nav() {
     const { data, error } = await supabase
       .from('profiles')
       .update({ acount: true })
-      .eq('email', loginData.email )
+      .eq('email', loginData.email)
       .select()
 
-    if(error) {
+    if (error) {
       console.log("something went wrong for online", error)
     }
 
@@ -237,13 +237,11 @@ function Nav() {
             {!token ? <NavLink to='/about' className="nav-link px-2 link-dark" activeClassName="active"><span className='item'><b>About</b></span></NavLink> : ""}
             {!token ? <NavLink to='/contact' className="nav-link px-2 link-dark" activeClassName="active"><span className='item'><b>Contact Us</b></span></NavLink> :
 
-              <div className='row'>
+              <div className='d-flex align-items-center'>
                 <Badge pill bg="#D23C3C" onClick={handleProfileClick} style={{ backgroundColor: "#FED9D5", color: "#D23C3C", cursor: 'pointer', width: '175px', height: '48px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 5 }}>
-
                   <FaUserCircle size={32} style={{ backgroundColor: "transparent" }} /> {token.user.user_metadata.first_name}
-
                 </Badge>
-                <button variant="button danger" onClick={handleLogout} className="mt-3">
+                <button variant="button danger" onClick={handleLogout} className="btn btn-danger ms-3" style={{ height: '48px', fontSize: '14px', padding: '8px 16px' }}>
                   Logout
                 </button>
               </div>
